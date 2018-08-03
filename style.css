@@ -1,0 +1,131 @@
+body {
+    background-image: linear-gradient(to bottom,  #00c9ff 0%, #92fe9d 100%), url(http://avante.biz/wp-content/uploads/Minimal-Wallpaper/Minimal-Wallpaper-022.jpg);
+	background-blend-mode: multiply;
+}
+
+.stage {
+    width: 200px; 
+    height: 200px;
+    perspective: 1600px;
+    perspective-origin: 50% -240px;
+    -webkit-perspective: 1600px;
+    -webkit-perspective-origin: 50% -500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+face {
+    display: block; 
+    position: absolute;
+    width: 200px; 
+    height: 200px;
+    transform-origin: 50% 50% 0; 
+    -webkit-transform-origin: 50% 50% 0; 
+}
+
+.cube { 
+    transform-style: preserve-3d; 
+    animation: rotate 10s infinite linear;
+    -webkit-transform-style: preserve-3d; 
+    -webkit-animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+    100% { transform: rotate3d(0, 1, 0, 360deg) }
+}
+
+@-webkit-keyframes rotate  {
+    100% { -webkit-transform: rotateY(360deg); }
+}
+
+
+.front { 
+    transform: translateZ(100px); 
+    -webkit-transform: translateZ(100px); 
+    background-color: #3498db;
+    transition: all 1s linear;
+}
+
+.back { 
+    transform: rotateY(180deg) translateZ(100px); 
+    -webkit-transform: rotateY(180deg) translateZ(100px); 
+    background-color: #27ae60;
+    transition: all 1s linear;
+}
+
+.top { 
+    transform: rotateX(90deg) translateZ(100px); 
+    -webkit-transform: rotateX(90deg) translateZ(100px); 
+    background-color: #f5f6fa;
+    transition: all 1s linear;
+}
+
+.bottom { 
+    transform: rotateX(-90deg) translateZ(100px); 
+    -webkit-transform: rotateX(-90deg) translateZ(100px); 
+    background-color: #f1c40f;
+    transition: all 1s linear;
+}
+
+.left { 
+    transform: rotateY(-90deg) translateZ(100px); 
+    -webkit-transform: rotateY(-90deg) translateZ(100px); 
+    background-color: #e74c3c;
+    transition: all 1s linear;
+}
+
+.right { 
+    transform: rotateY(90deg) translateZ(100px); 
+    -webkit-transform: rotateY(90deg) translateZ(100px); 
+    background-color: #e67e22;
+    transition: all 1s linear;
+}
+
+face {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(51px, 1fr));
+}
+
+.item {
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+	text-align: center;
+	padding: 10px
+}
+
+
+@media (max-width: 480px) {
+
+    face {
+        width: 100px; 
+        height: 100px;
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    }
+
+    .front {
+        transform: translateZ(50px); 
+        -webkit-transform: translateZ(50px); 
+    }
+    .back {
+        transform: rotateY(180deg) translateZ(50px); 
+        -webkit-transform: rotateY(180deg) translateZ(50px);
+    }
+    .top {
+        transform: rotateX(90deg) translateZ(50px); 
+        -webkit-transform: rotateX(90deg) translateZ(50px); 
+    }
+    .bottom {
+        transform: rotateX(-90deg) translateZ(50px); 
+        -webkit-transform: rotateX(-90deg) translateZ(50px); 
+    }
+    .left {
+        transform: rotateY(-90deg) translateZ(50px); 
+        -webkit-transform: rotateY(-90deg) translateZ(50px);
+    }
+    .right { 
+        transform: rotateY(90deg) translateZ(50px); 
+        -webkit-transform: rotateY(90deg) translateZ(50px); 
+    }
+}
