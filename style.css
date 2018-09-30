@@ -23,6 +23,8 @@ face {
     height: 200px;
     transform-origin: 50% 50% 0; 
     -webkit-transform-origin: 50% 50% 0; 
+    background-color: #000;
+    border-radius: 10px;
 }
 
 .cube { 
@@ -33,7 +35,7 @@ face {
 }
 
 @keyframes rotate {
-    100% { transform: rotate3d(0, 1, 0, 360deg) }
+    100% { transform: rotate3d(1, 1, 0, 360deg) }
 }
 
 @-webkit-keyframes rotate  {
@@ -44,43 +46,61 @@ face {
 .front { 
     transform: translateZ(100px); 
     -webkit-transform: translateZ(100px); 
-    background-color: #3498db;
     transition: all 1s linear;
+}
+
+.front .item{
+    background-color: #3498db;
 }
 
 .back { 
     transform: rotateY(180deg) translateZ(100px); 
     -webkit-transform: rotateY(180deg) translateZ(100px); 
-    background-color: #27ae60;
     transition: all 1s linear;
+}
+
+.back .item{
+    background-color: #27ae60;
 }
 
 .top { 
     transform: rotateX(90deg) translateZ(100px); 
     -webkit-transform: rotateX(90deg) translateZ(100px); 
-    background-color: #f5f6fa;
     transition: all 1s linear;
+}
+
+.top .item {
+    background-color: #f5f6fa;
 }
 
 .bottom { 
     transform: rotateX(-90deg) translateZ(100px); 
     -webkit-transform: rotateX(-90deg) translateZ(100px); 
-    background-color: #f1c40f;
     transition: all 1s linear;
+}
+
+.bottom .item {
+    background-color: #f1c40f;
 }
 
 .left { 
     transform: rotateY(-90deg) translateZ(100px); 
     -webkit-transform: rotateY(-90deg) translateZ(100px); 
-    background-color: #e74c3c;
     transition: all 1s linear;
+}
+
+.left .item{
+    background-color: #e74c3c;
 }
 
 .right { 
     transform: rotateY(90deg) translateZ(100px); 
     -webkit-transform: rotateY(90deg) translateZ(100px); 
-    background-color: #e67e22;
     transition: all 1s linear;
+}
+
+.right .item {
+    background-color: #e67e22;
 }
 
 face {
@@ -89,12 +109,60 @@ face {
 }
 
 .item {
-    border-width: 1px 1px 1px 1px;
-    border-style: solid;
-	text-align: center;
-	padding: 10px
+    text-align: center;
+    border: solid 1.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.item span {
+    position: absolute;
+}
+
+.item span img {
+    width: 30px;
+}
+
+.front .item:nth-child(5), .back .item:nth-child(5), .top .item:nth-child(5), .bottom .item:nth-child(5), .left .item:nth-child(5), .right .item:nth-child(5) {
+    border-radius: 10px;
+}
+
+.front .item:nth-child(1), .back .item:nth-child(1), .top .item:nth-child(1), .bottom .item:nth-child(1), .left .item:nth-child(1), .right .item:nth-child(1) {
+    border-bottom-right-radius: 10px;
+}
+
+.front .item:nth-child(2), .back .item:nth-child(2), .top .item:nth-child(2), .bottom .item:nth-child(2), .left .item:nth-child(2), .right .item:nth-child(2) {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.front .item:nth-child(3), .back .item:nth-child(3), .top .item:nth-child(3), .bottom .item:nth-child(3), .left .item:nth-child(3), .right .item:nth-child(3) {
+    border-bottom-left-radius: 10px;
+}
+
+.front .item:nth-child(4), .back .item:nth-child(4), .top .item:nth-child(4), .bottom .item:nth-child(4), .left .item:nth-child(4), .right .item:nth-child(4) {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.front .item:nth-child(6), .back .item:nth-child(6), .top .item:nth-child(6), .bottom .item:nth-child(6), .left .item:nth-child(6), .right .item:nth-child(6) {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.front .item:nth-child(7), .back .item:nth-child(7), .top .item:nth-child(7), .bottom .item:nth-child(7), .left .item:nth-child(7), .right .item:nth-child(7) {
+    border-top-right-radius: 10px;
+}
+
+.front .item:nth-child(8), .back .item:nth-child(8), .top .item:nth-child(8), .bottom .item:nth-child(8), .left .item:nth-child(8), .right .item:nth-child(8) {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.front .item:nth-child(9), .back .item:nth-child(9), .top .item:nth-child(9), .bottom .item:nth-child(9), .left .item:nth-child(9), .right .item:nth-child(9) {
+    border-top-left-radius: 10px;
+}
 
 @media (max-width: 480px) {
 
